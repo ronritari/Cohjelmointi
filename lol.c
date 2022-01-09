@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(void)
-{
+{       
   int tahti;
   scanf("%d",&tahti);
   int rivi=tahti;
@@ -10,7 +10,7 @@ int main(void)
     }
     for(int t=0;t<tahti;t++){
     printf("*");
-    }
+    }         
     printf("\n");
     rivi--;
   }
