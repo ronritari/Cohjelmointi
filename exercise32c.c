@@ -16,9 +16,9 @@ int main (void)
     }
 
     float tulos = a / 10;
-    printf("The mean value of numbers ");
+    printf("The mean value of numbers {");
     for(int i=0;i<=10;i++){
         printf("%d,",array[i]);
     }
-    printf(" is %.2f ", tulos);
+    printf("} is %.2f ", tulos);
 }

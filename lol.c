@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main(void)
 {
+  /*
   printf("Input rows: \n");
   int out, in;
   int row_size;
@@ -59,10 +60,26 @@ int main(void)
     x--;
     y++;
     printf("\n");
-  }
+  }*/
 
+  /* char array[15]="hello world";
+
+  for(int i=0;i<15;i++){
+        printf("%c\n",array[i]);
+    } */
+
+
+    for (int i = 5; i >= 0; i--)
+    {
+      printf("homo\n");
+      printf("%d", i);
+    }
+    
 
 }
+
+
+
 
 
 

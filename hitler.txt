@@ -1,0 +1,23 @@
+Ässä, Vesiputous.
+2, Anna 3 huikkaa.
+3, Juo 3 huikkaa.
+4, (hitler)darre.
+5, 123.
+6,(hitler)jaakko
+7, Kategoria.
+8, Sääntö.
+9, Kaikki juovat 3 huikkaa.
+10, (hitler)darre/jaakko.
+11, Tauko-kortti.
+12, Huora.
+13, Kuningasmuki.
+
+1darre
+2ron
+3obed
+4ville
+5jussi
+6jaakko
+7sampo
+8immu
+9elmeri
