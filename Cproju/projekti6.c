@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+
 
 //FILE *projekti6;
 /*
@@ -64,8 +64,11 @@ printf("X) Exit the program \n");
 //kysyy komentoa switch a-h ja x lopettaa m=display_menu
 char ask_command(void){
 printf("Enter command: \n");
-char *c;
+char c;
 scanf(" %c",&c);
+if(c >= 97 && c<= 122){
+    c=c-32;
+}
 return c;
 }
 
@@ -74,23 +77,24 @@ int main (void){
 char s[100]="Hello world";
 display_menu();
 
-int l=0;
-while(l<1){
-    char i='N';
-    *i=ask_command();
-    printf("%c ",i);
+//int l=0;
+char i='N';
+i=ask_command();
+while(i!='X'){
+
     switch (i)
     {
     case 'M':
         display_menu();
         break;
     case 'X':
-        l++;
+        
         break;
     
     default:
         break;
     }
+    i=ask_command();
 }
 
 }

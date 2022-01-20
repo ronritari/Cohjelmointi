@@ -6,7 +6,7 @@ int main (void)
     int array[10];
 
     
-    for(int i=1;i<=10;i++){
+    for(int i=0;i<=9;i++){
         float d;
         printf("%d. ",i);
         scanf("%f",&d);
@@ -16,9 +16,9 @@ int main (void)
     }
 
     float tulos = a / 10;
-    printf("The mean value of numbers {");
-    for(int i=0;i<=10;i++){
+    printf("The mean value of numbers [ ");
+    for(int i=0;i<9;i++){
         printf("%d,",array[i]);
     }
-    printf("} is %.2f ", tulos);
+    printf("%d ] is %.2f ",array[9], tulos);
 }
