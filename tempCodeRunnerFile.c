@@ -1,1 +1,1 @@
-//printf("%d",a);
+ int array[10]={0};
