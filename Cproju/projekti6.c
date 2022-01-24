@@ -2,14 +2,13 @@
 #include <stdlib.h>
 
 
-//FILE *projekti6;
+FILE *projekti6;
 
 //Function will print guide text (Give sing:) and read sing
-void read_sing(){
-char f[100];
+void read_sing(char s[]){
 printf("Give sing:\n");
-scanf("%s", f);
-return f;
+fgets(s , 100, stdin);
+
 }
 
 //Function will print current sing
@@ -35,9 +34,6 @@ int vowels = 0;
         }
         else if (ch == ' '){
             continue;
-        }
-        else{
-            
         }
     }
  
@@ -91,21 +87,19 @@ void to_upper(char s[]){
         printf("%c",s[i]);
     }
 printf("\n");
-}/*
+}
 //Read the sing from file. Filename may be hard coded in function tee vikana
 void read_file(char s[]){
-int variable;
-projekti6 = fopen("another_file.txt", "r");
-fscanf(projekti6, "%d",&variable);
+projekti6 = fopen("projekti6.txt", "r");
+fgets(s, 100, projekti6);
 fclose(projekti6);
 }
 //Save sing to file ei vielä toimi viimene
 void write_file(char s[]){
-int variable;
-projekti6 = fopen("filename.txt", "w");
-fprintf(projekti6, "Normal print statement with variables %d\n",variable);
+projekti6 = fopen("projekti6.txt", "w");
+fprintf(projekti6, " %s\n",s);
 fclose(projekti6);
-}*/
+}
 //displays menu
 void display_menu(void){
 printf("A)  Count the number of vowels in the sing \n");
@@ -123,12 +117,12 @@ printf("X)  Exit the program \n");
 //kysyy komentoa switch a-h ja x lopettaa m=display_menu
 char ask_command(void){
 printf("Enter command: \n");
-char c;
-scanf(" %c",&c);
-if(c >= 97 && c<= 122){
-    c=c-32;
+char c[6];
+fgets(c , 6, stdin);
+if(c[0] >= 97 && c[0]<= 122){
+    c[0]=c[0]-32;
 }
-return c;
+return c[0];
 }
 
 //main 
@@ -151,12 +145,10 @@ while(i!='X'){
         
         break;
     case 'A':
-        
         x = count_vowels(s);
         printf("string has %d vowels\n",x);
         break;
     case 'B':
-        
         x = count_consonants(s);
         printf("string has %d consonants\n",x);
         break;
@@ -170,13 +162,13 @@ while(i!='X'){
         print_sing(s);
         break;
     case 'F':
-        s = read_sing();
+        read_sing(s);
         break;
     case 'G':
-        
+        read_file(s);
         break;
     case 'H':
-        
+        write_file(s);
         break;
     
     default:
