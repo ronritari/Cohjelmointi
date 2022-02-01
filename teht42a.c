@@ -40,7 +40,7 @@ int main (void){
 
     printf("and the biggest number was %d and smallest was %d\n\n",big,small);
 
-    //printtaa kymmenet 
+   //printtaa kymmenet 
     printf("    ");
     int lol=0;
     int bruh=1;

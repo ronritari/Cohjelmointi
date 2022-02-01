@@ -1,1 +1,1 @@
- int array[10]={0};
+for
