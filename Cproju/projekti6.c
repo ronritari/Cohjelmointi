@@ -124,7 +124,8 @@ while(i!='X'){
         printf("%d\n",count_vowels);
         break;
     case 'B':
-        int x = count_consonants(char s[]);
+        int x;
+         x =int count_consonants(char s[]);
         printf("%d\n",x);
         break;
     case 'C':
