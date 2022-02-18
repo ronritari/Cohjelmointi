@@ -1,86 +1,28 @@
 #include <stdio.h>
 int main(void)
 {
-  /*
-  printf("Input rows: \n");
-  int out, in;
-  int row_size;
-  scanf("%d", &row_size);
-  int print_control_x = 1;
-  int print_control_y = row_size * 2 - 1;
-  int x=row_size;
-  int y=row_size;
-  
-  for (out = row_size; out >= 1; out--)
-  {
-    printf(" ");
-    for (in = 1; in <= row_size * 2; in++)
-    {       
-      
-      if (out==1){
-        
-      }
-      else if (in == print_control_x || in == print_control_y)
-      {
-        printf("%d", print_control_x);
-      }
-      else
-      {
-        printf(" ");
-      }
-    }
-    print_control_x++;
-    print_control_y--;
-    if(out==1){
-
-    }else{
-      printf("\n");
-    }
+    int a;
+    printf("Input rows:\n");
+    scanf("%d",&a);
+    int c=(a*2)-2;
     
-  }
-  for (out = 1; out <= row_size; out++)
-  {
-    if(out==1){
+    for(int i=1;i<=a;i++){
+        for(int b=0;b<i;b++){
+            printf("%d",i);
+            
+            
+        }
+        for (int f=0; f<c; f++){
+             if(c==1){
 
-    }else{
-      printf(" ");
+             }else
+                 printf(" ");
+            }
+            c=c-2;
+            for(int b=0;b<i;b++){
+            printf("%d",i);
+            }
+
+        printf("\n");
     }
-    
-    for (in = 1; in <= row_size * 2; in++)
-    {
-      if (in == x|| in == y)
-      {
-        printf("%d",x);
-      }
-      else
-      {
-        printf(" ");
-      }
-    }
-    x--;
-    y++;
-    printf("\n");
-  }*/
-
-  /* char array[15]="hello world";
-
-  for(int i=0;i<15;i++){
-        printf("%c\n",array[i]);
-    } */
-
-
-    for (int i = 5; i >= 0; i--)
-    {
-      printf("homo\n");
-      printf("%d", i);
-    }
-    
-
 }
-
-
-
-
-
-
-
