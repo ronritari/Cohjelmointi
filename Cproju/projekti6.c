@@ -121,7 +121,6 @@ int main (void){
     int x;  //helps int type virables in print vowels and consonants
     command=ask_command();
     while(command !='X'){   //loops until command variable is X
-
         switch (command){
             case 'M':
                 display_menu();
@@ -152,10 +151,9 @@ int main (void){
             case 'H':
                 write_file(s);
                 break;
-    
-        default:
-            printf("error\nTry again\n");
-            break;
+            default:
+                printf("error\nTry again\n");
+                break;
         }
         command=ask_command();
     }
