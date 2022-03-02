@@ -102,13 +102,13 @@ void display_menu(void){
 //asks command. changes letter to uppercase if needed
 char ask_command(void){
     printf("Enter command: \n");
-    char c[6];
-    fgets(c , 6, stdin);
+    char command[6];
+    fgets(command , 6, stdin);
 
-    if(c[0] >= 97 && c[0]<= 122){   //converts to uppercase
-        c[0]=c[0]-32;
+    if(command[0] >= 97 && command[0]<= 122){   //converts to uppercase
+        command[0]=command[0]-32;
     }
-    return c[0];
+    return command[0];
 }
 
 //main 
@@ -117,12 +117,12 @@ int main (void){
     char s[100]="Hello world";
     display_menu();
 
-    char i='N';
+    char command='N';
     int x;  //helps int type virables in print vowels and consonants
-    i=ask_command();
-    while(i!='X'){   //loops until i variable is X
+    command=ask_command();
+    while(command !='X'){   //loops until i variable is X
 
-        switch (i){
+        switch (command){
             case 'M':
                 display_menu();
                 break;
@@ -157,7 +157,7 @@ int main (void){
             printf("error\nTry again\n");
             break;
         }
-        i=ask_command();
+        command=ask_command();
     }
     return 0;
 }
