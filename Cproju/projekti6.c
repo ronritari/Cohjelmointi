@@ -120,7 +120,7 @@ int main (void){
     char command='N';
     int x;  //helps int type virables in print vowels and consonants
     command=ask_command();
-    while(command !='X'){   //loops until i variable is X
+    while(command !='X'){   //loops until command variable is X
 
         switch (command){
             case 'M':
