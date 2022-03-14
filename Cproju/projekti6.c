@@ -49,7 +49,7 @@ int count_consonants(char s[]){
     return consonants-1;    //for some reason adds one consonant too many
 }
 
-//a function that converts the string to all lowercase.
+//a function that converts the string to all lowercase letter by letter.
 void to_lower(char s[]){
     for(int i=0;s[i]!='\0';i++){
         if(s[i] >= 65 && s[i]<= 90){
@@ -59,7 +59,7 @@ void to_lower(char s[]){
     printf("%s\n",s);
 }
 
-//a function that converts the string to all uppercase.
+//a function that converts the string to all uppercase letter by letter.
 void to_upper(char s[]){
     for(int i=0;s[i]!='\0';i++){      //checks every letter
         if(s[i] >= 97 && s[i]<= 122){   //checks between these numbers in ASCII chart
