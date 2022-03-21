@@ -42,7 +42,6 @@
 *--------------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
-FILE *projekti6;
 
 /*-------------------------------------------------------------------*
 *    GLOBAL VARIABLES AND CONSTANTS                                  *
@@ -73,24 +72,25 @@ char ask_command(void);
 **********************************************************************/
 int main (void){
 
-    char s[100]="Hello world";
-    display_menu();
-
     char command='N';
     int numbers;  //helps int type virables in print vowels and consonants
+    char s[100]="Hello world";
+
+    display_menu();
     command=ask_command();
-    while(command !='X'){   //loops until command variable is X
+
+    while(command != 'X'){   //loops until command variable is X
         switch (command){
             case 'M':
                 display_menu();
                 break;
             case 'A':
                 numbers = count_vowels(s);
-                printf("string has %d vowels\n",numbers);
+                printf("string has %d vowels\n" ,numbers);
                 break;
             case 'B':
                 numbers = count_consonants(s);
-                printf("string has %d consonants\n",numbers);
+                printf("string has %d consonants\n" ,numbers);
                 break;
             case 'C':
                 to_upper(s);
@@ -113,7 +113,8 @@ int main (void){
             default:
                 printf("error\nTry again\n");
                 break;
-        }
+        } 
+
         command=ask_command();
     }
     return 0;
@@ -145,7 +146,7 @@ void read_string(char s[]){
 ;	Output: none
 ;*********************************************************************/
 void print_string(char s[]){
-    printf("%s\n",s);
+    printf("%s\n" ,s);
 }
 
 /*********************************************************************
@@ -161,6 +162,7 @@ void print_string(char s[]){
 ;       this function will ignore spaces
 ;*********************************************************************/
 int count_vowels(char s[]){
+
     int vowels = 0;
 
     for (int i = 0; s[i] != '\0'; i++) {
@@ -171,6 +173,7 @@ int count_vowels(char s[]){
             continue;   //jumps to next char
         }
     }
+
     return vowels;
 }
 
@@ -187,6 +190,7 @@ int count_vowels(char s[]){
 ;       returns consonants but it adds one integer too many. thats why -1
 ;*********************************************************************/
 int count_consonants(char s[]){
+
     int consonants = 0;
   
     for (int i = 0; s[i] != '\0'; i++) {
@@ -200,6 +204,7 @@ int count_consonants(char s[]){
             consonants++;
         }
     } 
+
     return consonants-1;    //for some reason adds one consonant too many
 }
 
@@ -213,12 +218,14 @@ int count_consonants(char s[]){
 ;	Output: none
 ;*********************************************************************/
 void to_lower(char s[]){
-    for(int i=0;s[i]!='\0';i++){
-        if(s[i] >= 65 && s[i]<= 90){
-            s[i]=s[i]+32;
+
+    for(int i = 0; s[i] != '\0'; i++){
+        if(s[i] >= 'A' && s[i]<= 'Z'){
+            s[i] = s[i] + 32;
         }
     }
-    printf("%s\n",s);
+
+    printf("%s\n" ,s);
 }
 
 /*********************************************************************
@@ -233,11 +240,13 @@ void to_lower(char s[]){
 ; 
 ;*********************************************************************/
 void to_upper(char s[]){
-    for(int i=0;s[i]!='\0';i++){      
-        if(s[i] >= 97 && s[i]<= 122){   
-            s[i]=s[i]-32;
+
+    for(int i = 0; s[i] != '\0'; i++){      
+        if(s[i] >= 'a' && s[i] <= 'z'){   
+            s[i] = s[i]-32;
         }
     }
+
     printf("%s\n",s);
 }
 
@@ -250,6 +259,8 @@ void to_upper(char s[]){
 ;       
 ;*********************************************************************/
 void read_file(char s[]){
+    FILE *projekti6;
+
     projekti6 = fopen("projekti6.txt", "r");    
     fgets(s, 100, projekti6);
     fclose(projekti6);
@@ -264,6 +275,8 @@ void read_file(char s[]){
 ;	Output: Number if its devidable by three, zero otherwise
 ;*********************************************************************/
 void write_file(char s[]){
+    FILE *projekti6;
+
     projekti6 = fopen("projekti6.txt", "w");
     fprintf(projekti6, " %s\n",s);
     fclose(projekti6);
@@ -287,6 +300,8 @@ void display_menu(void){
     printf("F)  Enter another string \n");
     printf("G)  Read string from file \n");
     printf("H)  Write string to file\n \n");
+
+
     printf("M)  Display this menu \n");
     printf("X)  Exit the program \n");
 }
@@ -305,8 +320,10 @@ char ask_command(void){
     printf("Enter command: \n");
     char command[6];
     fgets(command , 6, stdin);
-    if(command[0] >= 97 && command[0]<= 122){ 
-        command[0]=command[0]-32;
+
+    if(command[0] >= 'a' && command[0] <= 'z'){ 
+        command[0] = command[0]-32;
     }
+
     return command[0];
 }
