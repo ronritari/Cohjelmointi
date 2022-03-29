@@ -1,12 +1,7 @@
-#include <stdio.h>
-#include <math.h>
 #include <ncurses.h>
 #include <unistd.h> /* needed for usleep delay*/
 
-void draw_axis(void);
-int scale_sin(float value);
 void draw_line();
-
 
 int main (void)
 {
@@ -71,4 +66,3 @@ void draw_line()
     }
 
 }
-
