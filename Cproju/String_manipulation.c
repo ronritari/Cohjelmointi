@@ -72,8 +72,8 @@ char ask_command(void);
 **********************************************************************/
 int main (void){
 
-    char command;
-   
+    char command='N';
+    int numbers;  //helps int type virables in print vowels and consonants
     char s[100]="Hello world";
 
     display_menu();
@@ -85,9 +85,11 @@ int main (void){
                 display_menu();
                 break;
             case 'A':
+                //numbers = count_vowels(s);
                 printf("string has %d vowels\n" ,count_vowels(s));
                 break;
             case 'B':
+                //numbers = count_consonants(s);
                 printf("string has %d consonants\n" ,count_consonants(s));
                 break;
             case 'C':
@@ -270,7 +272,7 @@ void read_file(char s[]){
 ; NAME: void write_file(char s[])
 ; DESCRIPTION:  Writes to a txt file the current string s[]
 ;	Input: Srting s[]
-;	Output: 
+;	Output: Number if its devidable by three, zero otherwise
 ;*********************************************************************/
 void write_file(char s[]){
     FILE *projekti6;
