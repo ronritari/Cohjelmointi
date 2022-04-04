@@ -11,6 +11,9 @@
 #define origo_x max_screen_x/2
 #define origo_y max_screen_y/2
 
+#define x_scale max_screen_x/(2*PI)
+#define y_scale max_screen_y/2
+
 
 
 void draw_axis(void);
@@ -32,7 +35,16 @@ int main (void)
     init_pair (1, COLOR_WHITE, COLOR_BLUE);
     bkgd (COLOR_PAIR (1));
     draw_axis();
+    float radian = PI;
 
+    for(int i=0; i<max_screen_x;i++){
+        move(scale_sin(radian),i);
+        printw("0");
+        refresh ();
+        usleep(5000);
+        radian = radian + 0.1;
+    }
+    //scale_sin(2.4);
 
     
     nodelay (stdscr, FALSE);
@@ -56,6 +68,9 @@ void draw_axis(void){
 }
 
 int scale_sin(float value){
+
+    int scale= y_scale* sin(value);
+    return scale + origo_y;
 
 }
 
