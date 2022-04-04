@@ -35,7 +35,7 @@ int main (void)
     init_pair (1, COLOR_WHITE, COLOR_BLUE);
     bkgd (COLOR_PAIR (1));
     draw_axis();
-    float radian = PI;
+    float radian = -PI;
 
     for(int i=0; i<max_screen_x;i++){
         move(scale_sin(radian),i);
@@ -44,7 +44,7 @@ int main (void)
         usleep(5000);
         radian = radian + 0.1;
     }
-    //scale_sin(2.4);
+    
 
     
     nodelay (stdscr, FALSE);
