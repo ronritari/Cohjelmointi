@@ -1,7 +1,17 @@
 #include <stdio.h>
 #include <math.h>
 #include <ncurses.h>
-#include <unistd.h> /* needed for usleep delay*/
+#include <unistd.h>
+
+#define PI 3.14159
+
+#define max_screen_x 60
+#define max_screen_y 30
+
+#define origo_x max_screen_x/2
+#define origo_y max_screen_y/2
+
+
 
 void draw_axis(void);
 int scale_sin(float value);
@@ -16,59 +26,38 @@ int main (void)
 
     initscr ();
     clear ();
-    nodelay (stdscr, TRUE);	/* non block input for getch() */
+    nodelay (stdscr, TRUE);	
 
     start_color ();
     init_pair (1, COLOR_WHITE, COLOR_BLUE);
-    init_pair (2, COLOR_BLUE, COLOR_WHITE);
-    init_pair (3, COLOR_RED, COLOR_WHITE);
-    bkgd (COLOR_PAIR (3));
-    curs_set(0);
+    bkgd (COLOR_PAIR (1));
+    draw_axis();
 
-    row = 10;
-    noecho ();			/* stop echo of input */
 
-    for (i = 0; i < 30; i++)
-    {
-        move (row, i);
-        addstr ("Hello Ncurses");
-        draw_line();
-        refresh ();
-
-        move (row, i);
-        addstr ("             ");
-
-        ch = getch ();
-        if (ch == 'z')
-        {
-            row--;
-            i = 0;
-        }
-    }
-    nodelay (stdscr, FALSE);	/* non block input for getch() */
-
+    
+    nodelay (stdscr, FALSE);
     getch ();
     endwin ();
 }
 
-void draw_line()
-{
-    int i;
+void draw_axis(void){
 
-    for (i=0; i<30; i++)
-    {
-        move(11,i);
-        printw(" * ");
+    for(int i=0; i < max_screen_x; i++){
+        move(origo_y, i);
+        printw("*");
+
+        move(i, origo_x);
+        printw("*");
+
         refresh ();
-        usleep(10000);
-    }
-    for (i=0; i<30; i++)
-    {
-        move(11,30-i);
-        printw(" * ");
-        refresh ();
-        usleep(10000);
+        usleep(5000);
     }
 
 }
+
+int scale_sin(float value){
+
+}
+
+
 
