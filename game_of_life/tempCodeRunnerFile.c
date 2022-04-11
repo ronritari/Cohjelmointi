@@ -1,0 +1,2 @@
+
+	int neigbours=0;
