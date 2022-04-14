@@ -160,7 +160,7 @@ void check_neigbour(struct cell board[cell_amount_y][cell_amount_x]){
 			} if(board[y+1][x+1].current == 1){
 				points++;
 			}
-				//printf("%d\n",points);
+				
 				// Cell dies due to under population
 			if ((board[y][x].current == 1) && (points < 2)){
             	board[y][x].future = 0;

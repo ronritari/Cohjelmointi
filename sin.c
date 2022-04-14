@@ -106,4 +106,3 @@ int scale_sin(float radian){
 }
 
 
-
