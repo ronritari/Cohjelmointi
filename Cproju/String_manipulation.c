@@ -25,7 +25,7 @@
 
  2.  DESCRIPTION
     Asks a user in a loop for a command. Command manipulate given string s[].
-    s[] can be manipuleted in the functions and the program will ask user for 
+    s[] can be manipuleted in the functions and the program will ask user for
     command until command x. Command x will stop program.
 
 
@@ -38,14 +38,14 @@
 **********************************************************************/
 
 /*-------------------------------------------------------------------*
-*    HEADER FILES                                                    *
-*--------------------------------------------------------------------*/
+ *    HEADER FILES                                                    *
+ *--------------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
 
 /*-------------------------------------------------------------------*
-*    GLOBAL VARIABLES AND CONSTANTS                                  *
-*--------------------------------------------------------------------*/
+ *    GLOBAL VARIABLES AND CONSTANTS                                  *
+ *--------------------------------------------------------------------*/
 /* Control flags */
 
 /* Global constants */
@@ -55,8 +55,8 @@
 /* Global structures */
 
 /*-------------------------------------------------------------------*
-*    FUNCTION PROTOTYPES                                             *
-*--------------------------------------------------------------------*/
+ *    FUNCTION PROTOTYPES                                             *
+ *--------------------------------------------------------------------*/
 void read_string(char s[]);
 void print_string(char s[]);
 int count_vowels(char s[]);
@@ -68,85 +68,90 @@ void write_file(char s[]);
 void display_menu(void);
 char ask_command(void);
 /*********************************************************************
-*    MAIN PROGRAM                                                      *
-**********************************************************************/
-int main (void){
+ *    MAIN PROGRAM                                                      *
+ **********************************************************************/
+int main(void)
+{
 
-    char command='N';
-    int numbers;  //helps int type virables in print vowels and consonants
-    char s[100]="Hello world";
+    char command = 'N';
+    int numbers; // helps int type virables in print vowels and consonants
+    char s[100] = "Hello world";
 
     display_menu();
-    command=ask_command();
+    command = ask_command();
 
-    while(command != 'X'){   //loops until command variable is X
-        switch (command){
-            case 'M':
-                display_menu();
-                break;
-            case 'A':
-                //numbers = count_vowels(s);
-                printf("string has %d vowels\n" ,count_vowels(s));
-                break;
-            case 'B':
-                //numbers = count_consonants(s);
-                printf("string has %d consonants\n" ,count_consonants(s));
-                break;
-            case 'C':
-                to_upper(s);
-                break;
-            case 'D':
-                to_lower(s);
-                break;
-            case 'E':
-                print_string(s);
-                break;
-            case 'F':
-                read_string(s);
-                break;
-            case 'G':
-                read_file(s);
-                break;
-            case 'H':
-                write_file(s);
-                break;
-            default:
-                printf("error\nTry again\n");
-                break;
-        } 
+    while (command != 'X')
+    { // loops until command variable is X
+        switch (command)
+        {
+        case 'M':
+            display_menu();
+            break;
+        case 'A':
+            // numbers = count_vowels(s);
+            printf("string has %d vowels\n", count_vowels(s));
+            break;
+        case 'B':
+            // numbers = count_consonants(s);
+            printf("string has %d consonants\n", count_consonants(s));
+            break;
+        case 'C':
+            to_upper(s);
+            break;
+        case 'D':
+            to_lower(s);
+            break;
+        case 'E':
+            print_string(s);
+            break;
+        case 'F':
+            read_string(s);
+            break;
+        case 'G':
+            read_file(s);
+            break;
+        case 'H':
+            write_file(s);
+            break;
+        default:
+            printf("error\nTry again\n");
+            break;
+        }
 
-        command=ask_command();
+        command = ask_command();
     }
     return 0;
 }
 /*********************************************************************
-*    FUNCTIONS                                                       *
-**********************************************************************/
+ *    FUNCTIONS                                                       *
+ **********************************************************************/
 
 /*********************************************************************
 ;	F U N C T I O N    D E S C R I P T I O N
 ;---------------------------------------------------------------------
 ; NAME: void read_string(char s[])
-; DESCRIPTION:  This function will change our string s[] in to a 
+; DESCRIPTION:  This function will change our string s[] in to a
 ;    new string. the maximum characters is 100 letters
 ;   input: Original string
 ;   Output: new string defined by user
 ;*********************************************************************/
-void read_string(char s[]){
+void read_string(char s[])
+{
     printf("Give string:\n");
-    fgets(s , 100, stdin);
+    fgets(s, 100, stdin);
 }
 
 /*********************************************************************
 ;	F U N C T I O N    D E S C R I P T I O N
 ;---------------------------------------------------------------------
 ; NAME: void print_string(char s[])
-; DESCRIPTION:  Prints sting 
+; DESCRIPTION:  Prints sting
 ;	Input: string s[]
 ;	Output: none
 ;*********************************************************************/
-void print_string(char s[]){
-    printf("%s\n" ,s);
+void print_string(char s[])
+{
+    printf("%s\n", s);
 }
 
 /*********************************************************************
@@ -158,19 +163,23 @@ void print_string(char s[]){
 ;	Input: string s[]
 ;	Output: vowels variable
 ;  Used global variables: none
-; REMARKS when using this function: 
+; REMARKS when using this function:
 ;       this function will ignore spaces
 ;*********************************************************************/
-int count_vowels(char s[]){
+int count_vowels(char s[])
+{
 
     int vowels = 0;
 
-    for (int i = 0; s[i] != '\0'; i++) {
-        if (s[i] == 'a' || s[i] == 'e'|| s[i] == 'i' || s[i] == 'o'|| s[i] == 'u' || s[i] == 'A'|| s[i] == 'E' || s[i] == 'I'|| s[i] == 'O' || s[i] == 'U'){
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
+        {
             vowels++;
         }
-        else if (s[i] == ' '){
-            continue;   //jumps to next char
+        else if (s[i] == ' ')
+        {
+            continue; // jumps to next char
         }
     }
 
@@ -181,31 +190,36 @@ int count_vowels(char s[]){
 ;	F U N C T I O N    D E S C R I P T I O N
 ;---------------------------------------------------------------------
 ; NAME: int count_consonants(char s[])
-; DESCRIPTION:  works the same way as count vowels but will do nothing 
+; DESCRIPTION:  works the same way as count vowels but will do nothing
 ;   and will add consonants at else
 ;	Input: Srting s[]
 ;	Output: Consonants integer
 ;  Used global variables: none
-; REMARKS when using this function: 
+; REMARKS when using this function:
 ;       returns consonants but it adds one integer too many. thats why -1
 ;*********************************************************************/
-int count_consonants(char s[]){
+int count_consonants(char s[])
+{
 
     int consonants = 0;
-  
-    for (int i = 0; s[i] != '\0'; i++) {
-        if (s[i] == 'a' || s[i] == 'e'|| s[i] == 'i' || s[i] == 'o'|| s[i] == 'u' || s[i] == 'A'|| s[i] == 'E' || s[i] == 'I'|| s[i] == 'O' || s[i] == 'U'){
-            //does nothing
+
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
+        {
+            // does nothing
         }
-        else if (s[i] == ' '){
+        else if (s[i] == ' ')
+        {
             continue;
         }
-        else{
+        else
+        {
             consonants++;
         }
-    } 
+    }
 
-    return consonants-1;    //for some reason adds one consonant too many
+    return consonants - 1; // for some reason adds one consonant too many
 }
 
 /*********************************************************************
@@ -217,15 +231,18 @@ int count_consonants(char s[]){
 ;	Input: Srting s[]
 ;	Output: none
 ;*********************************************************************/
-void to_lower(char s[]){
+void to_lower(char s[])
+{
 
-    for(int i = 0; s[i] != '\0'; i++){
-        if(s[i] >= 'A' && s[i]<= 'Z'){
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        if (s[i] >= 'A' && s[i] <= 'Z')
+        {
             s[i] = s[i] + 32;
         }
     }
 
-    printf("%s\n" ,s);
+    printf("%s\n", s);
 }
 
 /*********************************************************************
@@ -237,17 +254,20 @@ void to_lower(char s[]){
 ;	Input: Srting s[]
 ;	Output: none
 ;  Used global variables: none
-; 
+;
 ;*********************************************************************/
-void to_upper(char s[]){
+void to_upper(char s[])
+{
 
-    for(int i = 0; s[i] != '\0'; i++){      
-        if(s[i] >= 'a' && s[i] <= 'z'){   
-            s[i] = s[i]-32;
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        if (s[i] >= 'a' && s[i] <= 'z')
+        {
+            s[i] = s[i] - 32;
         }
     }
 
-    printf("%s\n",s);
+    printf("%s\n", s);
 }
 
 /*********************************************************************
@@ -256,12 +276,13 @@ void to_upper(char s[]){
 ; NAME: void read_file(char s[])
 ; DESCRIPTION:  reads form projekti6.txt file the string
 ;	Input: Srting s[]
-;       
+;
 ;*********************************************************************/
-void read_file(char s[]){
+void read_file(char s[])
+{
     FILE *projekti6;
 
-    projekti6 = fopen("projekti6.txt", "r");    
+    projekti6 = fopen("projekti6.txt", "r");
     fgets(s, 100, projekti6);
     fclose(projekti6);
 }
@@ -274,11 +295,12 @@ void read_file(char s[]){
 ;	Input: Srting s[]
 ;	Output: Number if its devidable by three, zero otherwise
 ;*********************************************************************/
-void write_file(char s[]){
+void write_file(char s[])
+{
     FILE *projekti6;
 
     projekti6 = fopen("projekti6.txt", "w");
-    fprintf(projekti6, " %s\n",s);
+    fprintf(projekti6, " %s\n", s);
     fclose(projekti6);
 }
 
@@ -288,10 +310,11 @@ void write_file(char s[]){
 ; NAME: void display_menu(void)
 ; DESCRIPTION:  Displays options to use in the switch case in main
 ;	Input: none
-;	Output: 
-;  Used global variables: 
+;	Output:
+;  Used global variables:
 ;*********************************************************************/
-void display_menu(void){
+void display_menu(void)
+{
     printf("A)  Count the number of vowels in the string \n");
     printf("B)  Count the number of consonants in the string \n");
     printf("C)  Convert the string to uppercase \n");
@@ -300,7 +323,6 @@ void display_menu(void){
     printf("F)  Enter another string \n");
     printf("G)  Read string from file \n");
     printf("H)  Write string to file\n \n");
-
 
     printf("M)  Display this menu \n");
     printf("X)  Exit the program \n");
@@ -316,13 +338,15 @@ void display_menu(void){
 ;	Output: Command
 ;  Used global variables: none
 ;*********************************************************************/
-char ask_command(void){
+char ask_command(void)
+{
     printf("Enter command: \n");
     char command[6];
-    fgets(command , 6, stdin);
+    fgets(command, 6, stdin);
 
-    if(command[0] >= 'a' && command[0] <= 'z'){ 
-        command[0] = command[0]-32;
+    if (command[0] >= 'a' && command[0] <= 'z')
+    {
+        command[0] = command[0] - 32;
     }
 
     return command[0];
