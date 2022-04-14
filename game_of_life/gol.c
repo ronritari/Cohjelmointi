@@ -1,10 +1,21 @@
 /**********************************************************************
  * NAME
  * Game of Life
+ * 
  * DESCRIPTION
- *
- * VERSION/DATE
- * Ron Ritari date 11/04/2022
+ * this game is a version of john conways game of life
+ * the rules as follows:
+ * 
+ * For a space that is 'populated':
+ * Each cell with one or no neighbors' dies, as if by loneliness.
+ * Each cell with four or more neighbors dies, as if by overpopulation.
+ * Each cell with two or three neighbors survives.
+ * 
+ * For a space that is 'empty' or 'unpopulated'
+ * Each cell with three neighbors becomes populated.
+ * 
+ * VERSION/DATE/
+ * Ron Ritari date 14/04/2022
  * *********************************************************************/
 
 /***********************************************************************
@@ -54,7 +65,6 @@ int main(void)
 
 	printf("how many generations would you like to print\n");
 	int user_gen = user_int();
-
 
 	ncurses_start();
 
