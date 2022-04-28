@@ -1,231 +1,89 @@
-void display_occurrence(char s[])
+void check_neigbour(struct cell board[cell_amount_y][cell_amount_x])
 {
-    int c=0;
-    //int counter=0;
-    char letters[52]={0};
-    while(s[c]!='\0'){
+	for (int y = 0; y < cell_amount_y; y++)
+	{
+		for (int x = 0; x < cell_amount_x; x++)
+		{
+			// keeps record of cells neighbours
+			int neighbour = 0;
+			// checks firs if cell is within boarder and that the cell around is alive
+			if (y - 1 >= 0 && x - 1 >= 0)
+			{
+				if ((board[y - 1][x - 1].current == 1))
+				{
+					neighbour++;
+				}
+			}
+			if (y - 1 >= 0)
+			{
+				if ((board[y - 1][x].current == 1))
+				{
+					neighbour++;
+				}
+			}
+			if (y - 1 >= 0 && x + 1 < cell_amount_x)
+			{
+				if ((board[y - 1][x + 1].current == 1))
+				{
+					neighbour++;
+				}
+			}
+			if (x - 1 >= 0)
+			{
+				if ((board[y][x - 1].current == 1))
+				{
+					neighbour++;
+				}
+			}
+			if (x + 1 < cell_amount_x)
+			{
+				if ((board[y][x + 1].current == 1))
+				{
+					neighbour++;
+				}
+			}
+			if (y + 1 < cell_amount_y && x - 1 >= 0)
+			{
+				if ((board[y + 1][x - 1].current == 1))
+				{
+					neighbour++;
+				}
+			}
+			if (y + 1 < cell_amount_y)
+			{
+				if ((board[y + 1][x].current == 1))
+				{
+					neighbour++;
+				}
+			}
+			if (y + 1 < cell_amount_y && x + 1 < cell_amount_x)
+			{
+				if ((board[y + 1][x + 1].current == 1))
+				{
+					neighbour++;
+				}
+			}
 
-        
-        
-       for (int i=0; i<1; i++){ 
-        if(s[c]=='A'){
-            letters[0]++;
-        }if(s[c]=='B'){
-            letters[1]++;
-        }if(s[c]=='C'){
-            letters[2]++;
-        }if(s[c]=='D'){
-            letters[3]++;
-        }if(s[c]=='E'){
-            letters[4]++;
-        }if(s[c]=='F'){
-            letters[5]++;
-        }if(s[c]=='G'){
-            letters[6]++;
-        }if(s[c]=='H'){
-            letters[7]++;
-        }if(s[c]=='I'){
-            letters[8]++;
-        }if(s[c]=='J'){
-            letters[9]++;
-        }if(s[c]=='K'){
-            letters[10]++;
-        }if(s[c]=='L'){
-            letters[11]++;
-        }if(s[c]=='M'){
-            letters[12]++;
-        }if(s[c]=='N'){
-            letters[13]++;
-        }if(s[c]=='O'){
-            letters[14]++;
-        }if(s[c]=='P'){
-            letters[15]++;
-        }if(s[c]=='Q'){
-            letters[16]++;
-        }if(s[c]=='R'){
-            letters[17]++;
-        }if(s[c]=='S'){
-            letters[18]++;
-        }if(s[c]=='T'){
-            letters[19]++;
-        }if(s[c]=='U'){
-            letters[20]++;
-        }if(s[c]=='V'){
-            letters[21]++;
-        }if(s[c]=='W'){
-            letters[22]++;
-        }if(s[c]=='X'){
-            letters[23]++;
-        }if(s[c]=='Y'){
-            letters[24]++;
-        }if(s[c]=='Z'){
-            letters[25]++;
-        }
-        if(s[c]=='a'){
-            letters[26]++;
-        }if(s[c]=='b'){
-            letters[27]++;
-        }if(s[c]=='c'){
-            letters[28]++;
-        }if(s[c]=='d'){
-            letters[29]++;
-        }if(s[c]=='e'){
-            letters[30]++;
-        }if(s[c]=='f'){
-            letters[31]++;
-        }if(s[c]=='g'){
-            letters[32]++;
-        }if(s[c]=='h'){
-            letters[33]++;
-        }if(s[c]=='i'){
-            letters[34]++;
-        }if(s[c]=='j'){
-            letters[35]++;
-        }if(s[c]=='k'){
-            letters[35]++;
-        }if(s[c]=='l'){
-            letters[37]++;
-        }if(s[c]=='m'){
-            letters[38]++;
-        }if(s[c]=='n'){
-            letters[39]++;
-        }if(s[c]=='o'){
-            letters[40]++;
-        }if(s[c]=='p'){
-            letters[41]++;
-        }if(s[c]=='q'){
-            letters[42]++;
-        }if(s[c]=='r'){
-            letters[43]++;
-        }if(s[c]=='s'){
-            letters[44]++;
-        }if(s[c]=='t'){
-            letters[45]++;
-        }if(s[c]=='u'){
-            letters[46]++;
-        }if(s[c]=='v'){
-            letters[47]++;
-        }if(s[c]=='w'){
-            letters[48]++;
-        }if(s[c]=='x'){
-            letters[49]++;
-        }if(s[c]=='y'){
-            letters[50]++;
-        }if(s[c]=='z'){
-            letters[51]++;
-        }
-       }
-        
-        c++;
-    }
-
-        
-        if(letters[0]=>1){
-            printf("'A'=%d\n",letters[0]);
-        }if(letters[1]>1){
-            printf("'B'=%d\n",letters[1]);
-        }if(letters[2]>1){
-            printf("'C'=%d\n",letters[2]);
-        }if(letters[3]>1){
-            printf("'D'=%d\n",letters[3]);
-        }if(letters[4]>1){
-            printf("'E'=%d\n",letters[4]);
-        }if(letters[5]>1){
-            printf("'F'=%d\n",letters[5]);
-        }if(letters[6]>1){
-            printf("'G'=%d\n",letters[6]);
-        }if(letters[7]>1){
-            printf("'H'=%d\n",letters[7]);
-        }if(letters[8]>1){
-            printf("'I'=%d\n",letters[8]);
-        }if(letters[9]>1){
-            printf("'J'=%d\n",letters[9]);
-        }if(letters[10]>1){
-            printf("'K'=%d\n",letters[10]);
-        }if(letters[11]>1){
-            printf("'L'=%d\n",letters[11]);
-        }if(letters[12]>1){
-            printf("'M'=%d\n",letters[12]);
-        }if(letters[13]>1){
-            printf("'N'=%d\n",letters[13]);
-        }if(letters[14]>1){
-            printf("'O'=%d\n",letters[14]);
-        }if(letters[15]>1){
-            printf("'P'=%d\n",letters[15]);
-        }if(letters[16]>1){
-            printf("'Q'=%d\n",letters[16]);
-        }if(letters[17]>1){
-            printf("'R'=%d\n",letters[17]);
-        }if(letters[18]>1){
-            printf("'S'=%d\n",letters[18]);
-        }if(letters[19]>1){
-            printf("'T'=%d\n",letters[19]);
-        }if(letters[20]>1){
-            printf("'U'=%d\n",letters[20]);
-        }if(letters[21]>1){
-            printf("'V'=%d\n",letters[21]);
-        }if(letters[22]>1){
-            printf("'W'=%d\n",letters[22]);
-        }if(letters[23]>1){
-            printf("'X'=%d\n",letters[23]);
-        }if(letters[24]>1){
-            printf("'Y'=%d\n",letters[24]);
-        }if(letters[25]>1){
-            printf("'Z'=%d\n",letters[25]);
-        }
-        if(letters[26]>1){
-            printf("'a'=%d\n",letters[26]);
-        }if(letters[27]>1){
-            printf("'b'=%d\n",letters[27]);
-        }if(letters[28]>1){
-            printf("'c'=%d\n",letters[28]);
-        }if(letters[29]>1){
-            printf("'d'=%d\n",letters[29]);
-        }if(letters[30]>1){
-            printf("'e'=%d\n",letters[30]);
-        }if(letters[31]>1){
-            printf("'f'=%d\n",letters[31]);
-        }if(letters[32]>1){
-            printf("'g'=%d\n",letters[32]);
-        }if(letters[33]>1){
-            printf("'h'=%d\n",letters[33]);
-        }if(letters[34]>1){
-            printf("'i'=%d\n",letters[34]);
-        }if(letters[35]>1){
-            printf("'j'=%d\n",letters[35]);
-        }if(letters[36]>1){
-            printf("'k'=%d\n",letters[36]);
-        }if(letters[37]>1){
-            printf("'l'=%d\n",letters[37]);
-        }if(letters[38]>1){
-            printf("'m'=%d\n",letters[38]);
-        }if(letters[39]>1){
-            printf("'n'=%d\n",letters[39]);
-        }if(letters[40]>1){
-            printf("'o'=%d\n",letters[40]);
-        }if(letters[41]>1){
-            printf("'p'=%d\n",letters[41]);
-        }if(letters[42]>1){
-            printf("'q'=%d\n",letters[42]);
-        }if(letters[43]>1){
-            printf("'r'=%d\n",letters[43]);
-        }if(letters[44]>1){
-            printf("'s'=%d\n",letters[44]);
-        }if(letters[45]>1){
-            printf("'t'=%d\n",letters[45]);
-        }if(letters[46]>1){
-            printf("'u'=%d\n",letters[46]);
-        }if(letters[47]>1){
-            printf("'v'=%d\n",letters[47]);
-        }if(letters[48]>1){
-           printf("'w'=%d\n",letters[48]);
-        }if(letters[49]>1){
-            printf("'x'=%d\n",letters[49]);
-        }if(letters[50]>1){
-            printf("'y'=%d\n",letters[50]);
-        }if(letters[51]>1){
-            printf("'z'=%d\n",letters[51]);
-        }
-        //lol
-    
+			// Cell dies due to under population
+			if ((board[y][x].current == 1) && (neighbour < 2))
+			{
+				board[y][x].future = 0;
+			}
+			// Cell dies due to over population
+			else if ((board[y][x].current == 1) && (neighbour > 3))
+			{
+				board[y][x].future = 0;
+			}
+			// A new cell is born
+			else if ((board[y][x].current == 0) && (neighbour == 3))
+			{
+				board[y][x].future = 1;
+			}
+			// Remains the same
+			else
+			{
+				board[y][x].future = board[y][x].current;
+			}
+		}
+	}
 }
